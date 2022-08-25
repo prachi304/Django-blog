@@ -1,0 +1,136 @@
+body{
+    background:rgb(38, 8, 38);
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+a,a:visited{
+    color: rgb(161, 161, 77);
+    text-decoration: none;
+}
+
+a:hover{
+    color:darkolivegreen;
+}
+
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+div.wrapper h1{
+    text-align:center;
+    font-weight: 100px auto;
+    font-size: 2.4em;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+header img{
+    max-width: 35%;
+}
+
+nav{
+    justify-self: end;
+}
+nav li{
+    display: inline-block;
+    text-align: right;
+    padding: 10px;
+}
+
+nav button{
+    background:none;
+    color: white;
+    cursor:pointer;
+    border: 0;
+    font-size: 1em;
+    display:contents;
+}
+
+.articles{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.article{
+    padding: 10px;
+    border: 1px solid darkolivegreen;
+    position:relative;
+    padding-bottom: 40px;
+}
+
+.article h2{
+    font-size:1.2em;
+}
+
+.article .author{
+    padding:10px;
+    background: rgb(161, 161, 77);
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    margin:0;
+    color: rgb(38, 8, 38);
+}
+
+.article-detail .article{
+    padding:10px auto;
+}
+
+.article-detail .article img{
+    max-width: 100%;
+}
+
+.article-detail .article h2{
+    color: rgb(161, 161, 77);
+    text-align:center;
+    margin: 20px auto;
+    font-size: 2em;
+}
+
+.site-form{
+    margin: 50px;
+    border: 1px solid rgb(161, 161, 77);
+    padding: 20px;
+}
+
+.site-form input, .site-form textarea{
+    display:block;
+    margin: 5px 0 0px 0;
+    padding: 5px;
+} 
+
+.helptext, .helptext ul{
+    margin: 0px 0 20px;
+    font-size: 0.9em;
+    color:gray;
+    display:block;
+}
+
+.errorlist{
+    padding: 5px 10px;
+    list-style-type:none;
+    border: 1px solid #f8685a;
+    color: #f8685a;
+}
+
+.site-form input[type="submit"]{
+    background-color: rgb(161,161,77);
+    border: 0;
+    color: rgb(38, 8, 38);
+    border-radius:10px;
+    padding:10px 20px;
+    font-size: 1.1em;
+    cursor:pointer;
+}
+

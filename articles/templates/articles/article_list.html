@@ -1,0 +1,17 @@
+{% extends 'baselayout.html' %} 
+
+{% block content %}
+
+    <h1>ARTICLES</h1>
+    <div class="articles">
+        {% for article in articles %}
+        <div class="article">
+            <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
+            <p> {{article.snippet}} </p>
+            <p style="font-size: small;"> {{article.date}} </p>
+            <p class="author">Added by {{article.author}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
