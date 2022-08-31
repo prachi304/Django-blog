@@ -1,0 +1,14 @@
+{% extends 'baselayout.html' %} 
+
+{% block content %}
+
+<div class="update-article">
+    <h1>UPDATE THE ARTICLE</h1>
+    <form class="site-form" action="{% url 'articles:update' articles.slug %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Update">
+    </form>
+</div>
+
+{% endblock %}

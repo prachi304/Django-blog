@@ -12,4 +12,20 @@
         </div>
     </div>
 
+    <div class="update-delete">
+        <nav>
+            <ul style="list-style-type: none;">
+            {% if user.is_authenticated and user == articles.author%}
+                <li> <a href="{% url 'articles:update' articles.slug %}"></a></li>
+                <li>
+                    <form class="update-link" action="{% url 'articles:update' articles.slug %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" style="float: right;">Update</button>
+                    </form>
+                </li>
+                <li><a href="{% url 'articles:delete' articles.slug %}">Delete this article</a></li>
+            {% endif %} 
+            </ul>
+        </nav>
+    </div>
 {% endblock %}

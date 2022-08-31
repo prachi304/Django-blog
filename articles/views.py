@@ -1,3 +1,4 @@
+from urllib import response
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Article
@@ -25,3 +26,24 @@ def article_create(request):
     else:
         form = forms.CreateArticle()
     return render(request,'articles/article_create.html',{'form':form})
+
+@login_required(login_url="/accounts/login/")
+def article_update(request,slug):
+    article = Article.objects.get(slug=slug)
+    if request.method == 'POST':
+        form = forms.CreateArticle(request.POST, request.FILES, instance=article)
+        if form.is_valid():
+            form.save()
+            return redirect('articles:list')
+        else:
+            form = forms.CreateArticle(instance=article)
+    return render(request,'articles/article_update.html',{'articles':article,'form':form})
+
+
+@login_required(login_url="/accounts/login/")
+def article_delete(request,slug):
+    article = Article.objects.get(slug=slug)
+    if request.method == 'POST':
+        article.delete()
+        return redirect('articles:list')
+    return render(request,'articles/article_delete.html',{'articles':article})
